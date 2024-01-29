@@ -1,9 +1,9 @@
-i#!/usr/bin/env bash
+#!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
 
 i=1
-while [] ; do
+while  [ $i -le 10 ]; do
 	
 	echo "Best School"
-	((count++))
+	((i++))
 done	
