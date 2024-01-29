@@ -1,8 +1,8 @@
 i#!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
 
-count=0;
-while [ "$count" -lt 10 ] ; do
+;
+while [] ; do
 	
 	echo "Best School"
 	((count++))
