@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ps axo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+
