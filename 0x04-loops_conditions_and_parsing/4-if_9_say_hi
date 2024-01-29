@@ -8,5 +8,5 @@ while [ $i -le 10 ]; do
 
 	fi
 	echo "Best Schhol"
-	
+	((i++))
 done
