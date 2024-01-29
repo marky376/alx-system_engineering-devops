@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Bash script that displays a list of currently running processes.
 
-ps axo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+printf "%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n" "USER" "PID" "%CPU" "%MEM" "VSZ" "RSS" "TTY" "STAT" "START" "TIME" "COMMAND"
 
+ps aux --forest | awk 'NR > 1 { printf "%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n", $1, $2, $3, $4, $5, $6, $7, $8, $9, $10 }'
