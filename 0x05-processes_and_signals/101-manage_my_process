@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Bash script to manage manage_my_process
+
+PID_FILE="/var/run/my_process.pid"
+SCRIPT="./manage_my_process"
+
+# Function to start manage_my_process
+start() {
+    if [ -e "$PID_FILE" ]; then
+        echo "manage_my_process is already running."
+    else
+        nohup $SCRIPT > /dev/null 2>&1 &
+        echo $! > "$PID_FILE"
+        echo "manage_my_process started"
+    fi
+}
+
+# Function to stop manage_my_process
+stop() {
+    if [ -e "$PID_FILE" ]; then
+        pid=$(cat "$PID_FILE")
+        kill $pid
+        rm -f "$PID_FILE"
+        echo "manage_my_process stopped"
+    else
+        echo "manage_my_process is not running."
+    fi
+}
+
+# Function to restart manage_my_process
+restart() {
+    stop
+    start
+    echo "manage_my_process restarted"
+}
+
+# Check the command-line arguments
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
