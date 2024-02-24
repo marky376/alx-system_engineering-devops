@@ -1,0 +1,7 @@
+1. User types www.foobar.com into their browser
+2. The request is sent to a DNS Resolver
+3. The DNS Resolver points to the server IP 8.8.8.8
+4. The server, running Nginx, receives the request
+5. Nginx, acting as the web server, forwards the request to the application server
+6. The application server interacts with the MySQL database if necessary
+7. The response is sent back through the application server, Nginx, and the internet, to the user's browser
