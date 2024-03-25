@@ -1,1 +1,8 @@
 54.152.233.143
+#!/usr/bin/env bash
+# Client configuration file
+Host server
+    HostName 
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
