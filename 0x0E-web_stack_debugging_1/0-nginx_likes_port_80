@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script enables the default Nginx site configuration and restarts the Nginx service.
+
+# Enable the default site configuration by creating a symbolic link from sites-available to sites-enabled
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart the Nginx service to apply the changes
+sudo service nginx restart
