@@ -1,0 +1,4 @@
+sudo ufw allow ssh
+sudo ufw allow 80/tcp
+sudo ufw route allow 8080 comment 'Redirect port 8080 to port 80'
+sudo ufw enable
