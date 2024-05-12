@@ -1,7 +1,7 @@
-# 0. Strace is your frienid
-# Fixes Apache 500 error
-
-exec { 'fix-wordpress':
-  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
-  path    => '/usr/local/bin/:/bin/'
+exec { 'fix_apache_error':
+  command  => '/bin/echo "Fixing Apache 500 error"',
+  path     => '/usr/bin:/bin',
+  require  => Package['apache2'], # Ensure Apache is installed first
+  subscribe => File['/tmp/strace.log'], # Trigger the exec when strace.log is updated
 }
+
