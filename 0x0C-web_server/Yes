@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name 54.237.63.221;  # Use your server's IP address here
+
+    root /var/www/html;  # Path to your website files
+    #index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
