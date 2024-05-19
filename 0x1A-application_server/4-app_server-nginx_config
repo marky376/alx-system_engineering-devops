@@ -60,6 +60,11 @@ server {
 	location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+) {
 		proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
 	}
+
+	# forward to flask api application server
+	location /api/ {
+		proxy_pass http://0.0.0.0:5002;
+	}	
 	# end of location blocks
 
 	# pass PHP scripts to FastCGI server
